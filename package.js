@@ -1,12 +1,12 @@
 Package.describe({
-  summary: "LZ-based compression algorithm for Meteor",
-  version: "1.3.3",
-  git: "https://github.com/nunohvidal/LZ-String-Meteor.git"
+  name: 'chautoni:lz-string-meteor',
+  summary: 'LZ-based compression algorithm for Meteor',
+  version: '1.4.4',
+  git: "https://github.com/chautoni/LZ-String-Meteor.git"
 });
 
-Package.on_use(function (api) {
-  api.versionsFrom("METEOR@0.9.0");
-  api.add_files(['lz-string.js'], ['server', 'client']);
-  if(api.export)
-    api.export('LZString');
+Package.onUse(function(api) {
+  api.versionsFrom('1.0.4.2');
+  api.export('LZString', ['client', 'server']);
+  api.addFiles('lz-string.js', ['client', 'server']);
 });
